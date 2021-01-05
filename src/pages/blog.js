@@ -1,15 +1,12 @@
 import React from "react"
-import Navbar from "../components/navbar"
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 function Blog() {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <h1>Blog</h1>
       <p>Aqui habra post de blog en un futuro</p>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
