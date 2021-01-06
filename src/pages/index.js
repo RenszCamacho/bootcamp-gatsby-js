@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
+import GlobalStyle from "../components/globalStyle"
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const Container = styled.div`
 function Index() {
   return (
     <Layout>
+      <GlobalStyle />
       <Container>
         <h1>Hello</h1>
         <p>I am Renszo</p>
