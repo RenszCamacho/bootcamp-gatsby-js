@@ -1,27 +1,41 @@
 import React from "react"
+import styled from "styled-components"
 import { Link } from "gatsby"
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`
+const List = styled.ul`
+  display: flex;
+`
+const Items = styled.li`
+  padding: 20px;
+  list-style: none;
+`
 
 function Navbar() {
   return (
-    <nav>
+    <Nav>
       <div>
         <Link to="/">Renszo</Link>
       </div>
-      <ul>
-        <li>
+      <List>
+        <Items>
           <Link to="/">Home</Link>
-        </li>
-        <li>
+        </Items>
+        <Items>
           <Link to="/about">About</Link>
-        </li>
-        <li>
+        </Items>
+        <Items>
           <Link to="/contact">Contact</Link>
-        </li>
-        <li>
+        </Items>
+        <Items>
           <Link to="/blog">Blog</Link>
-        </li>
-      </ul>
-    </nav>
+        </Items>
+      </List>
+    </Nav>
   )
 }
 
