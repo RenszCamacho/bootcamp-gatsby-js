@@ -12,6 +12,10 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
 `
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: blue;
+`
 
 function Index() {
   return (
@@ -21,7 +25,7 @@ function Index() {
         <h1>Hello</h1>
         <p>I am Renszo</p>
         <p>
-          Need a developer? <Link to="/contact">Contactame Me</Link>
+          Need a developer? <StyledLink to="/contact">Contactame Me</StyledLink>
         </p>
       </Container>
     </Layout>

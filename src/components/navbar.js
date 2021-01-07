@@ -15,24 +15,29 @@ const Items = styled.li`
   list-style: none;
 `
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: blue;
+`
+
 function Navbar() {
   return (
     <Nav>
       <div>
-        <Link to="/">Renszo</Link>
+        <StyledLink to="/">Renszo</StyledLink>
       </div>
       <List>
         <Items>
-          <Link to="/">Home</Link>
+          <StyledLink to="/">Home</StyledLink>
         </Items>
         <Items>
-          <Link to="/about">About</Link>
+          <StyledLink to="/about">About</StyledLink>
         </Items>
         <Items>
-          <Link to="/contact">Contact</Link>
+          <StyledLink to="/contact">Contact</StyledLink>
         </Items>
         <Items>
-          <Link to="/blog">Blog</Link>
+          <StyledLink to="/blog">Blog</StyledLink>
         </Items>
       </List>
     </Nav>
