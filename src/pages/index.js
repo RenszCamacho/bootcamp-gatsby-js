@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import GlobalStyle from "../components/globalStyle"
@@ -17,13 +17,13 @@ const StyledLink = styled(Link)`
   color: blue;
 `
 
-function Index() {
+function Index({ data }) {
   return (
     <Layout>
       <GlobalStyle />
       <Container>
-        <h1>Hello</h1>
-        <p>I am Renszo</p>
+        <h1>{data.site.siteMetadata.title}</h1>
+        <p>I am {data.site.siteMetadata.author}</p>
         <p>
           Need a developer? <StyledLink to="/contact">Contactame Me</StyledLink>
         </p>
@@ -31,5 +31,16 @@ function Index() {
     </Layout>
   )
 }
+
+export const data = graphql`
+  query Index {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+  }
+`
 
 export default Index
