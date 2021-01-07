@@ -43,15 +43,4 @@ function Index() {
   )
 }
 
-// export const data = graphql`
-//   query Index {
-//     site {
-//       siteMetadata {
-//         title
-//         author
-//       }
-//     }
-//   }
-// `
-
 export default Index
