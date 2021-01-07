@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 
 const Foot = styled.footer`
   display: flex;
@@ -15,9 +16,18 @@ const Foot = styled.footer`
 `
 
 function Footer() {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `)
   return (
     <Foot>
-      <p>&copy; 2021 All right reserved</p>
+      <p>&copy; 2021 All right reserved {data.site.siteMetadata.author}</p>
     </Foot>
   )
 }

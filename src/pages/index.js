@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import GlobalStyle from "../components/globalStyle"
@@ -17,7 +17,18 @@ const StyledLink = styled(Link)`
   color: blue;
 `
 
-function Index({ data }) {
+function Index() {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          author
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       <GlobalStyle />
@@ -32,15 +43,15 @@ function Index({ data }) {
   )
 }
 
-export const data = graphql`
-  query Index {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-  }
-`
+// export const data = graphql`
+//   query Index {
+//     site {
+//       siteMetadata {
+//         title
+//         author
+//       }
+//     }
+//   }
+// `
 
 export default Index
