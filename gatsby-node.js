@@ -16,31 +16,31 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 }
 
-module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPages } = actions
+// module.exports.createPages = async ({ graphql, actions }) => {
+//   const { createPages } = actions
 
-  // 1.Get path to template
-  const blogTemplate = path.resolve("./src/templates/templateBlog.js")
-  const res = await graphql`
-    query {
-      allMdx {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `
-  res.allMdx.edges.map(edge => {
-    createPages({
-      components: blogTemplate,
-      path: `/blog/${edges.node.fields.slug}`,
-      context: {
-        slug: edge.node.fields.slug,
-      },
-    })
-  })
-}
+//   // 1.Get path to template
+//   const blogTemplate = path.resolve("./src/templates/templateBlog.js")
+//   const res = await graphql`
+//     query {
+//       allMdx {
+//         edges {
+//           node {
+//             fields {
+//               slug
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `
+//   res.allMdx.edges.map(edge => {
+//     createPages({
+//       components: blogTemplate,
+//       path: `/blog/${edges.node.fields.slug}`,
+//       context: {
+//         slug: edge.node.fields.slug,
+//       },
+//     })
+//   })
+// }
