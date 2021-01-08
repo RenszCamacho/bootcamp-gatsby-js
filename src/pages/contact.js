@@ -6,7 +6,7 @@ function Contact() {
     <Layout>
       <h1>Get in Touch</h1>
       <p>Drop me a Message</p>
-      <a href="https://twitter.com/home" target="_blank">
+      <a href="https://twitter.com/home" target="_blank" rel="noreferrer">
         @renszo
       </a>
     </Layout>
